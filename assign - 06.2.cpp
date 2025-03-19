@@ -1,5 +1,5 @@
 /*
-*  Assignment - 6
+*  Assignment - 6.2
 
 *  Q2. Implement following classes. 
 *  Test all functionalities in main() of each created class. 
