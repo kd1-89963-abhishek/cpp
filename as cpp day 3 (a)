@@ -1,0 +1,75 @@
+#include<iostream>
+using namespace std;
+
+class Volume 
+{
+    int length;
+    int width;
+    int height;
+
+    public :
+    // default constructor
+    Volume() : length (2), width(3), height(8) {}
+    
+    // parameterized constructor with one parameter
+    Volume(int side) : length(side), width(side), height(side) {}
+    //{
+      //  this-> length = side;
+        //this-> width = side;
+        //this-> height = side; 
+    //}
+    
+    // parameterized constructor with three parameters
+    Volume(int l, int w, int h) : length(l), width(w), height(h) {}
+    
+    int calculateVolume() {
+        return length*width*height;
+    }
+    
+};
+
+int main()  {
+    int choice;
+    int side, length, width, height;
+
+    do {
+        cout << "Menu:\n";
+        cout << "1. calculate volume with default values\n";
+        cout << "2. calculate volume with l,b,h with same value \n";
+        cout << "3. calculate volume with different l,b,h \n";
+        cout << "4. Exit \n";
+        cout << "5. Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1: {
+                Volume v;
+                cout << "Volume of the box with default value: " << v.calculateVolume() << endl;
+                break;
+            }
+            case 2: {
+                cout << "Enter the value for l, b, h: ";
+                cin >>(side);
+                Volume v (side);
+                cout << "Volume of the box with same l,b,h: " << v.calculateVolume() << endl;
+                break; 
+            }
+            case 3:  {
+                cout << "Enter the length: ";
+                cin >> length;
+                cout << "Enter the width: ";
+                cin >> width;
+                cout << "Enter the height: ";
+                cin >> height;
+                Volume v(length, width, height);
+                cout << "Volume of the bo with different l, b, h: " << v.calculateVolume() << endl;
+                break;
+            }
+            case 4: {
+                cout << "Exiting the program \n";
+                break;
+            }
+        }
+    }while (choice != 4);
+    return 0;
+}

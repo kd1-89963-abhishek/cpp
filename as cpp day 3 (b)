@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std;
+class Tollbooth
+{
+unsigned int total_cars;
+double money_collected;
+
+public:
+Tollbooth(){
+    total_cars = 0;
+    money_collected = 0;
+
+}
+void payingCars()
+{
+    total_cars = total_cars + 1;
+    money_collected = money_collected + 0.5;
+}
+void nopayingCars()
+{
+    total_cars = total_cars + 1;
+}
+void printOnConsole()
+{cout << "total cars passed: " << total_cars << endl;
+cout << "total money collected: " << money_collected << endl;
+}
+};
+
+int main()
+{
+Tollbooth tb;
+int choice = 0;
+    
+    do {
+        cout << "Menu:\n";
+        cout << "1. total number of cars passed \n";
+        cout << "2. cash collected \n";
+        cout << "3. display details \n";
+        cout << "4. Exit \n";
+        cout << " Enter your choice";
+        cin >> choice;
+
+        switch (choice)
+        {
+            case 1 : 
+                tb.payingCars();
+                break;
+
+            case 2: 
+                tb.nopayingCars();
+                break;
+            case 3: 
+                 tb.printOnConsole();
+                break;
+            case 4 : 
+                cout << "tata bye";
+        }
+    }
+        while (choice != 4 );
+
+
+     return 0;
+}
+

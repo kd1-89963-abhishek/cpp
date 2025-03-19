@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+namespace NStudent{
+
+
+class Student
+ {
+     
+     string name;
+     int roll_number;
+     int marks;
+
+     public:
+    void acceptStudent()
+    {
+        cout<<"Enter your name: "<< endl;
+        cin>>name;
+        cout<<"Enter Roll no."<<endl;
+        cin>>roll_number;
+        cout<<"Enter marks"<<endl;
+        cin>>marks;
+    }
+    void displayStudent()
+    {
+        cout<<"student name is : "<< name << endl;
+        cout<<"student roll no.: " << roll_number << endl;
+        cout <<"student marks: " << marks << endl;
+    }
+
+ };
+}
+
+using namespace NStudent;
+ int main()
+ {
+     NStudent ::Student s1;
+     int a =0;
+     s1.acceptStudent();
+     s1.displayStudent();
+     return 0;
+    
+     
+ }

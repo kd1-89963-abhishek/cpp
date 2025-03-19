@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+
+class Student
+{
+    private:
+    int roll_number;
+    string name;
+    int marks;
+
+    public:
+    void printStudentOnConsole() const {
+        cout << "Student" << "Roll No.: "<< roll_number  << endl << "Name: " << name <<endl << "Marks: " << marks <<endl;
+    }
+
+    void acceptStudentFromConsole()  {
+        cout << "Enter Roll No.: ";
+        cin >> roll_number;
+        cout << "Enter Name: ";
+        cin >> name;
+        cout << "Enter Marks";
+        cin >> marks;
+
+    }
+};
+
+int main()  {
+    Student s1;
+    int choice;
+
+    do {
+        cout << "\n Menu: >n";
+        cout << "1. Accept data from console";
+        cout << "2. print data";
+        cin >> choice;
+
+
+
+        switch (choice) {
+            case 1:
+                s1.acceptStudentFromConsole();
+                break;
+            case 2:
+                s1.printStudentOnConsole();
+                break;
+            default:
+                cout << "Invalid choice, Please try again. \n";
+
+
+        }
+    }while (choice !=2);
+    return 0;
+}
